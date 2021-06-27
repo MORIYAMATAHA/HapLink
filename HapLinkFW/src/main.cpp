@@ -89,6 +89,21 @@ void motor_R_L(float p4)
   }
 }
 
+void encoder_debug()
+{
+  float newPosition_L_R = L_R_ENC.read();
+  float newPosition_L_L = L_L_ENC.read();
+  float newPosition_R_R = R_R_ENC.read();
+  float newPosition_R_L = R_L_ENC.read();
+
+  Serial.println(newPosition_L_R);
+  Serial.println(newPosition_L_L);
+  Serial.println(newPosition_R_R);
+  Serial.println(newPosition_R_L);
+  Serial.println(" ");
+
+  delay(500);
+}
 
 void setup() {
   // put your setup code here, to run once:
@@ -152,7 +167,7 @@ void loop() {
   float newPosition_R_R = R_R_ENC.read();
   float newPosition_R_L = R_L_ENC.read();
 
-
+//encoder_debug();
 
 /*
       goal_R_L = incomingbyte_;
